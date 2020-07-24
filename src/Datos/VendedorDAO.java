@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.swing.JOptionPane;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class VendedorDAO {
 
@@ -22,14 +23,15 @@ public class VendedorDAO {
 	}
 	
 	
-	public Vendedor ValidarVendedor(String dni, String user) {
+	public Vendedor ValidarVendedor(String user, String password) {
 		
 		try {
+			String pass = DigestUtils.sha1Hex(password); 
 			con = Conexion.getConexion();
-			String sql = "SELECT * FROM vendedor WHERE dni=? and User=?";
+			String sql = "SELECT * FROM vendedor WHERE User=? and Password=?";
 			pstm = con.prepareStatement(sql);
-			pstm.setString(1, dni);
-			pstm.setString(2, user);
+			pstm.setString(1, user);
+			pstm.setString(2, pass);
 			rs = pstm.executeQuery();
 			miVendedor = new Vendedor();
 			
@@ -42,6 +44,7 @@ public class VendedorDAO {
 			miVendedor.setTel(rs.getString(4));
 			miVendedor.setEstado(rs.getString(5));
 			miVendedor.setUser(rs.getString(6));
+			miVendedor.setPass(rs.getNString(7));
 
 		}
 		catch(Exception ex){/*

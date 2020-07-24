@@ -49,13 +49,13 @@ public class LoginController implements ActionListener {
 			flogin.txtpassword.setText("");
 			flogin.txtlogin.requestFocus();
 		}
-		this.BuscarUsuario(pass, login);
+		this.BuscarUsuario(login, pass);
 	}
 	
-	private void BuscarUsuario(String pas, String log) {
+	private void BuscarUsuario(String log, String pas) {
 		
 		//String pass = new String(arrayPass);
-		this.ven= dao.ValidarVendedor(pas, log);
+		this.ven= dao.ValidarVendedor(log, pas);
 
 		
 		if(ven == null) {

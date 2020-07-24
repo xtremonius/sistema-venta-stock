@@ -8,6 +8,7 @@ public class Vendedor {
 	private String tel;
 	private String estado;
 	private String user;
+	private String pass;
 	
 	
 	public Vendedor() {
@@ -15,17 +16,28 @@ public class Vendedor {
 	}
 	
 	
-	public Vendedor(int id, String dni, String nom, String tel, String estado, String user) {
 	
+	public Vendedor(int id, String dni, String nom, String tel, String estado, String user, String pass) {
 		this.id = id;
 		this.dni = dni;
 		this.nom = nom;
 		this.tel = tel;
 		this.estado = estado;
 		this.user = user;
+		this.pass = pass;
 	}
-	
-	
+
+
+	public String getPass() {
+		return pass;
+	}
+
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+
 	public int getId() {
 		return id;
 	}
