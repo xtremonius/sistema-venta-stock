@@ -16,6 +16,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -32,6 +35,19 @@ public class FrmMenuPrincipal extends JFrame{
 	public JButton btnlogin;
 	private Border border;
 	private JLabel logo;
+	private JMenuBar barra;
+	private JMenu menu;
+	private JMenu ventas;
+	private JMenu mantenimiento;
+	private JMenu reportes;
+	private JMenuItem ayuda;
+	private JMenuItem generar_venta;
+	private JMenuItem cliente;
+	private JMenuItem producto;
+	private JMenuItem vendedor;
+	private JMenuItem salir;
+	private JMenuItem reportes_ventas;
+	
 
 	
 	public FrmMenuPrincipal() {
@@ -147,11 +163,39 @@ public class FrmMenuPrincipal extends JFrame{
 		TitledBorder titleBoder = BorderFactory.createTitledBorder(border);
 		p.setBorder(titleBoder);
 		
-		logo = new JLabel();
+		//logo = new JLabel();
 		
+		barra = new JMenuBar();
+		menu = new JMenu("Menú");
+		ventas = new JMenu("Ventas");
+		mantenimiento = new JMenu("Mantenimiento");
+		reportes = new JMenu("Reportes");
 		
-		logo.setIcon(new ImageIcon(getClass().getResource("/Files/login.png")));
-		p.add(logo);
+		salir = new JMenuItem("Salir");
+		ayuda = new JMenuItem("Ayuda");
+		generar_venta = new JMenuItem("Generar Venta");
+		cliente = new JMenuItem("Cliente");
+		producto = new JMenuItem("Producto");
+		vendedor = new JMenuItem("Vendedor");
+		reportes_ventas = new JMenuItem("Reporte de Ventas");
+	
+		
+		menu.add(ayuda);
+		menu.add(salir);
+		ventas.add(generar_venta);
+		mantenimiento.add(cliente);
+		mantenimiento.add(producto);
+		mantenimiento.add(vendedor);
+		reportes.add(reportes_ventas);
+		
+		barra.add(menu);
+		barra.add(ventas);
+		barra.add(mantenimiento);
+		barra.add(reportes);
+		
+		p.add(barra);
+		//logo.setIcon(new ImageIcon(getClass().getResource("/Files/login.png")));
+		//p.add(logo);
 
 		
 		return p;

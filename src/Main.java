@@ -6,7 +6,7 @@ public class Main {
 	public static void main(String[] args){
 		
 		//FrmLogin milogin = new FrmLogin();
-		LoginController logincontroll = new LoginController();
+		LoginController logincontrol = new LoginController();
 		
 		
 	
