@@ -33,7 +33,7 @@ public class LoginController implements ActionListener {
 		
 	}
 
-	@Override
+	
 	public void actionPerformed(ActionEvent e) {
 		
 		//JOptionPane.showMessageDialog(null, "Hola Mundo!!!");
@@ -66,7 +66,8 @@ public class LoginController implements ActionListener {
 		}else {
 			this.flogin.dispose();
 			JOptionPane.showMessageDialog(null, "Bienvenido: "+ven.getNom(), "", JOptionPane.INFORMATION_MESSAGE);
-			FrmMenuPrincipal menuprincipal = new FrmMenuPrincipal();
+			//FrmMenuPrincipal menuprincipal = new FrmMenuPrincipal();
+			FrmMenuPrincipalController menuprincipal = new FrmMenuPrincipalController();
 		}
 		
 		

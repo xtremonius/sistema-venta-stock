@@ -93,6 +93,7 @@ public class FrmLogin extends JFrame{
 		constraints.gridheight = 1;
 		constraints.fill = GridBagConstraints.NONE;
 		constraints.weighty = 1.0;
+		txtlogin.setText("emp01");
 		x.add(txtlogin, constraints);
 		constraints.weighty = 0.0;
 		
@@ -115,6 +116,7 @@ public class FrmLogin extends JFrame{
 		constraints.gridheight = 1;
 		constraints.fill = GridBagConstraints.NONE;
 		constraints.weighty = 1.0;
+		txtpassword.setText("12345678");
 		x.add(txtpassword, constraints);
 		constraints.weighty = 0.0;
 		

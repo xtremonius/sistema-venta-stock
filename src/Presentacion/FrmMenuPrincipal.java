@@ -28,11 +28,11 @@ import javax.swing.border.TitledBorder;
 
 public class FrmMenuPrincipal extends JFrame{
 	
-	private JLabel vlogin;
+	private JLabel tfooter;
 	private JLabel vpassword;
-	public JPasswordField txtpassword;
-	public JTextField txtlogin;
-	public JButton btnlogin;
+	private JPasswordField txtpassword;
+	private JTextField txtlogin;
+	private JButton btnlogin;
 	private Border border;
 	private JLabel logo;
 	private JMenuBar barra;
@@ -45,7 +45,7 @@ public class FrmMenuPrincipal extends JFrame{
 	private JMenuItem cliente;
 	private JMenuItem producto;
 	private JMenuItem vendedor;
-	private JMenuItem salir;
+	public JMenuItem salir;
 	private JMenuItem reportes_ventas;
 	
 
@@ -60,13 +60,13 @@ public class FrmMenuPrincipal extends JFrame{
 		JPanel pNorte = _crearPNorte();
 		add(pNorte, BorderLayout.NORTH);
 		
-		/*
+		
 		JPanel pCentro = _crearPCentro();
 		add(pCentro, BorderLayout.CENTER);
 		
 		
 		JPanel pSur = _crearPSur();
-		add(pSur, BorderLayout.SOUTH);*/
+		add(pSur, BorderLayout.SOUTH);
 		
 		
 		
@@ -91,7 +91,7 @@ public class FrmMenuPrincipal extends JFrame{
 		
 		TitledBorder titleBoder = BorderFactory.createTitledBorder(border);
 		x.setBorder(titleBoder);
-		
+		/*
 		vlogin = new JLabel("Login");
 		constraints.gridx = 1;
 		constraints.gridy = 0;
@@ -149,7 +149,7 @@ public class FrmMenuPrincipal extends JFrame{
 		p.add(o);*/
 
 		
-		return x;
+		return x; 
 		
 		
 		
@@ -158,34 +158,40 @@ public class FrmMenuPrincipal extends JFrame{
 	
 	private JPanel _crearPNorte() {
 		
-		//JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JPanel p = new JPanel();
+		JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
+	    //JPanel p = new JPanel();
 		TitledBorder titleBoder = BorderFactory.createTitledBorder(border);
 		p.setBorder(titleBoder);
 		
 		//logo = new JLabel();
 		
 		barra = new JMenuBar();
+		barra.setOpaque(false);
 		menu = new JMenu("Menú");
 		ventas = new JMenu("Ventas");
 		mantenimiento = new JMenu("Mantenimiento");
 		reportes = new JMenu("Reportes");
 		
-		salir = new JMenuItem("Salir");
-		ayuda = new JMenuItem("Ayuda");
-		generar_venta = new JMenuItem("Generar Venta");
-		cliente = new JMenuItem("Cliente");
-		producto = new JMenuItem("Producto");
-		vendedor = new JMenuItem("Vendedor");
-		reportes_ventas = new JMenuItem("Reporte de Ventas");
-	
 		
+		salir = new JMenuItem("Salir", new ImageIcon(getClass().getResource("/Files/salir.png")));
+		//salir.setIcon(new ImageIcon(getClass().getResource("/Files/salir.png")));
+		ayuda = new JMenuItem("Ayuda", new ImageIcon(getClass().getResource("/Files/ayuda.png")));
+		generar_venta = new JMenuItem("Generar Venta", new ImageIcon(getClass().getResource("/Files/generar_venta.png")));
+		cliente = new JMenuItem("Clientes",  new ImageIcon(getClass().getResource("/Files/clientes.png")));
+		producto = new JMenuItem("Productos",  new ImageIcon(getClass().getResource("/Files/productos.png")));
+		vendedor = new JMenuItem("Vendedores",  new ImageIcon(getClass().getResource("/Files/vendedores.png")));
+		reportes_ventas = new JMenuItem("Reporte de Ventas",  new ImageIcon(getClass().getResource("/Files/reportes_ventas.png")));
+	
+		menu.setIcon(new ImageIcon(getClass().getResource("/Files/menu.png")));
 		menu.add(ayuda);
 		menu.add(salir);
+		ventas.setIcon(new ImageIcon(getClass().getResource("/Files/ventas.png")));
 		ventas.add(generar_venta);
+		mantenimiento.setIcon(new ImageIcon(getClass().getResource("/Files/mantenimiento.png")));
 		mantenimiento.add(cliente);
 		mantenimiento.add(producto);
 		mantenimiento.add(vendedor);
+		reportes.setIcon(new ImageIcon(getClass().getResource("/Files/reportes.png")));
 		reportes.add(reportes_ventas);
 		
 		barra.add(menu);
@@ -206,12 +212,12 @@ public class FrmMenuPrincipal extends JFrame{
 	
 	private JPanel _crearPSur() {
 		
-		//JPanel p = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JPanel p = new JPanel();
+		JPanel p = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+		//JPanel p = new JPanel();
 		TitledBorder titleBoder = BorderFactory.createTitledBorder(border);
 		p.setBorder(titleBoder);
-		btnlogin = new JButton("Login");
-		p.add(btnlogin);
+		tfooter = new JLabel("Desarrollado por Alejandro Aquino ® 2020.");
+		p.add(tfooter);
 		
 		return p;
 		
