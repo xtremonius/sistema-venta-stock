@@ -14,7 +14,9 @@ import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -41,12 +43,14 @@ public class FrmMenuPrincipal extends JFrame{
 	private JMenu mantenimiento;
 	private JMenu reportes;
 	private JMenuItem ayuda;
-	private JMenuItem generar_venta;
-	private JMenuItem cliente;
+	public JMenuItem generar_venta;
+	public JMenuItem cliente;
 	private JMenuItem producto;
 	private JMenuItem vendedor;
 	public JMenuItem salir;
 	private JMenuItem reportes_ventas;
+	public JFrame pCentro;
+	public JDesktopPane VentanaPrincipal;
 	
 
 	
@@ -55,14 +59,19 @@ public class FrmMenuPrincipal extends JFrame{
 		super("Sistema Punto de Venta/Stock");
 		//Container content = getContentPane();
 		//content.setLayout(new BorderLayout());
+		VentanaPrincipal = new JDesktopPane();
 		border=BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
 		
 		JPanel pNorte = _crearPNorte();
 		add(pNorte, BorderLayout.NORTH);
 		
+		//pCentro = new JFrame();
+		//pCentro = _crearPCentro();
 		
-		JPanel pCentro = _crearPCentro();
-		add(pCentro, BorderLayout.CENTER);
+		//pCentro = new JPanel();
+		//pCentro = _crearPCentro();
+		//add(pCentro, BorderLayout.CENTER); 
+		add(VentanaPrincipal, BorderLayout.CENTER);
 		
 		
 		JPanel pSur = _crearPSur();
@@ -216,13 +225,223 @@ public class FrmMenuPrincipal extends JFrame{
 		//JPanel p = new JPanel();
 		TitledBorder titleBoder = BorderFactory.createTitledBorder(border);
 		p.setBorder(titleBoder);
-		tfooter = new JLabel("Desarrollado por Alejandro Aquino ® 2020.");
+		tfooter = new JLabel("Desarrollado por Alejandro Aquino ® 2020        Version 1.0");
 		p.add(tfooter);
 		
 		return p;
 		
 		
 		
+	}
+
+
+	public JLabel getTfooter() {
+		return tfooter;
+	}
+
+
+	public void setTfooter(JLabel tfooter) {
+		this.tfooter = tfooter;
+	}
+
+
+	public JLabel getVpassword() {
+		return vpassword;
+	}
+
+
+	public void setVpassword(JLabel vpassword) {
+		this.vpassword = vpassword;
+	}
+
+
+	public JPasswordField getTxtpassword() {
+		return txtpassword;
+	}
+
+
+	public void setTxtpassword(JPasswordField txtpassword) {
+		this.txtpassword = txtpassword;
+	}
+
+
+	public JTextField getTxtlogin() {
+		return txtlogin;
+	}
+
+
+	public void setTxtlogin(JTextField txtlogin) {
+		this.txtlogin = txtlogin;
+	}
+
+
+	public JButton getBtnlogin() {
+		return btnlogin;
+	}
+
+
+	public void setBtnlogin(JButton btnlogin) {
+		this.btnlogin = btnlogin;
+	}
+
+
+	public Border getBorder() {
+		return border;
+	}
+
+
+	public void setBorder(Border border) {
+		this.border = border;
+	}
+
+
+	public JLabel getLogo() {
+		return logo;
+	}
+
+
+	public void setLogo(JLabel logo) {
+		this.logo = logo;
+	}
+
+
+	public JMenuBar getBarra() {
+		return barra;
+	}
+
+
+	public void setBarra(JMenuBar barra) {
+		this.barra = barra;
+	}
+
+
+	public JMenu getMenu() {
+		return menu;
+	}
+
+
+	public void setMenu(JMenu menu) {
+		this.menu = menu;
+	}
+
+
+	public JMenu getVentas() {
+		return ventas;
+	}
+
+
+	public void setVentas(JMenu ventas) {
+		this.ventas = ventas;
+	}
+
+
+	public JMenu getMantenimiento() {
+		return mantenimiento;
+	}
+
+
+	public void setMantenimiento(JMenu mantenimiento) {
+		this.mantenimiento = mantenimiento;
+	}
+
+
+	public JMenu getReportes() {
+		return reportes;
+	}
+
+
+	public void setReportes(JMenu reportes) {
+		this.reportes = reportes;
+	}
+
+
+	public JMenuItem getAyuda() {
+		return ayuda;
+	}
+
+
+	public void setAyuda(JMenuItem ayuda) {
+		this.ayuda = ayuda;
+	}
+
+
+	public JMenuItem getGenerar_venta() {
+		return generar_venta;
+	}
+
+
+	public void setGenerar_venta(JMenuItem generar_venta) {
+		this.generar_venta = generar_venta;
+	}
+
+
+	public JMenuItem getCliente() {
+		return cliente;
+	}
+
+
+	public void setCliente(JMenuItem cliente) {
+		this.cliente = cliente;
+	}
+
+
+	public JMenuItem getProducto() {
+		return producto;
+	}
+
+
+	public void setProducto(JMenuItem producto) {
+		this.producto = producto;
+	}
+
+
+	public JMenuItem getVendedor() {
+		return vendedor;
+	}
+
+
+	public void setVendedor(JMenuItem vendedor) {
+		this.vendedor = vendedor;
+	}
+
+
+	public JMenuItem getSalir() {
+		return salir;
+	}
+
+
+	public void setSalir(JMenuItem salir) {
+		this.salir = salir;
+	}
+
+
+	public JMenuItem getReportes_ventas() {
+		return reportes_ventas;
+	}
+
+
+	public void setReportes_ventas(JMenuItem reportes_ventas) {
+		this.reportes_ventas = reportes_ventas;
+	}
+
+
+	public JFrame getpCentro() {
+		return pCentro;
+	}
+
+
+	public void setpCentro(JFrame pCentro) {
+		this.pCentro = pCentro;
+	}
+
+
+	public JDesktopPane getVentanaPrincipal() {
+		return VentanaPrincipal;
+	}
+
+
+	public void setVentanaPrincipal(JDesktopPane ventanaPrincipal) {
+		VentanaPrincipal = ventanaPrincipal;
 	}
 	
 	
