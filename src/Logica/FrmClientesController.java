@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 import Datos.Cliente;
 import Datos.ClienteDAO;
 import Presentacion.FrmClientes;
-import Presentacion.FrmVentas;
+
 
 public class FrmClientesController {
 	
@@ -256,6 +256,7 @@ public class FrmClientesController {
 			ventanaClientes.getComestado().setSelectedItem(es);
 			ventanaClientes.getBtnactualizar().setEnabled(true);
 			ventanaClientes.getBtneliminar().setEnabled(true);
+			ventanaClientes.getBtnagregar().setEnabled(false);
 		}
 	}
 
